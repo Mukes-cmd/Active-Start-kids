@@ -8,7 +8,7 @@ const Home = () => {
       <Navbar />
 
       {/* ================= HERO ================= */}
-      <section className="relative min-h-[calc(100vh-80px)] overflow-hidden bg-[#FAFCF9]">
+      <section className="relative min-h-[calc(100vh-80px)] overflow-hidden bg-[#FAFCF9] ">
 
         {/* ================= BACKGROUND DECORATION ================= */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -110,6 +110,7 @@ const Home = () => {
                   font-bold
                   leading-[1.03]
                   tracking-[-0.04em]
+                  mt-10
                 
                 "
               >

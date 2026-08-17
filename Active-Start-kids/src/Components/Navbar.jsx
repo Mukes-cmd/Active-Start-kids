@@ -12,9 +12,9 @@ const Navbar = () => {
       <Link
         to="/"
         className="
-          w-1/5
-          min-w-[240px]
           h-full
+          w-[240px]
+          min-w-[240px]
           bg-gray-100
           flex
           items-center
@@ -22,12 +22,21 @@ const Navbar = () => {
           border-r
           border-gray-200
           shadow-[4px_0_12px_rgba(0,0,0,0.12)]
+          
+          /* Medium / small laptop */
+          lg:w-[190px]
+          lg:min-w-[190px]
 
-          max-md:w-auto
-          max-md:min-w-0
-          max-md:flex-1
-          max-md:justify-start
-          max-md:px-5
+          /* Large laptop and desktop */
+          xl:w-[240px]
+          xl:min-w-[240px]
+
+          /* Mobile */
+          max-lg:flex-1
+          max-lg:w-auto
+          max-lg:min-w-0
+          max-lg:justify-start
+          max-lg:px-5
         "
       >
         <img
@@ -36,13 +45,15 @@ const Navbar = () => {
           className="
             h-10
             object-contain
-            max-md:h-9
+            lg:h-9
+            xl:h-10
+            max-lg:h-9
           "
         />
       </Link>
 
 
-      {/* ================= NAVIGATION ================= */}
+      {/* ================= DESKTOP NAVIGATION ================= */}
       <div
         className="
           flex-1
@@ -50,16 +61,19 @@ const Navbar = () => {
           flex
           items-center
           justify-between
-          px-8
 
-          max-md:px-4
-          max-md:relative
-          max-md:justify-end
+          px-8
+          lg:px-3
+          xl:px-8
+
+          max-lg:justify-end
+          max-lg:px-4
+          max-lg:relative
         "
       >
 
         {/* ================= DESKTOP LINKS ================= */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8 lg:gap-3 xl:gap-8">
 
           {/* ================= HOME ================= */}
           <Link
@@ -69,7 +83,10 @@ const Navbar = () => {
               relative
               text-[#0B1220]
               text-[15px]
+              lg:text-[12px]
+              xl:text-[15px]
               font-semibold
+              whitespace-nowrap
               hover:text-[#8FD14F]
               transition-colors
               duration-300
@@ -94,7 +111,7 @@ const Navbar = () => {
           </Link>
 
 
-          {/* ================= SEE HOW IT WORK ================= */}
+          {/* ================= ACTIVE START APPROACH ================= */}
           <div className="relative group">
 
             <Link
@@ -104,13 +121,16 @@ const Navbar = () => {
                 relative
                 text-[#0B1220]
                 text-[15px]
+                lg:text-[12px]
+                xl:text-[15px]
                 font-semibold
-                hover:text-[#8FD14F]
-                transition-colors
-                duration-300
+                whitespace-nowrap
                 flex
                 items-center
                 gap-2
+                hover:text-[#8FD14F]
+                transition-colors
+                duration-300
               "
             >
               ActiveStarts Kids Approach
@@ -282,7 +302,10 @@ const Navbar = () => {
               relative
               text-[#0B1220]
               text-[15px]
+              lg:text-[12px]
+              xl:text-[15px]
               font-semibold
+              whitespace-nowrap
               hover:text-[#8FD14F]
               transition-colors
               duration-300
@@ -315,7 +338,10 @@ const Navbar = () => {
               relative
               text-[#0B1220]
               text-[15px]
+              lg:text-[12px]
+              xl:text-[15px]
               font-semibold
+              whitespace-nowrap
               hover:text-[#8FD14F]
               transition-colors
               duration-300
@@ -352,7 +378,10 @@ const Navbar = () => {
               relative
               text-[#0B1220]
               text-[15px]
+              lg:text-[12px]
+              xl:text-[15px]
               font-semibold
+              whitespace-nowrap
               hover:text-[#8FD14F]
               transition-colors
               duration-300
@@ -384,7 +413,7 @@ const Navbar = () => {
 
 
         {/* ================= DESKTOP DEMO BUTTON ================= */}
-        <div className="max-md:hidden">
+        <div className="hidden lg:block flex-shrink-0 ml-3">
 
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSdbGapyT761HjsvQF4XM7hWNPyyXmkJ4CxbGDS1Fn8akj9wLw/viewform?usp=publish-editor"
@@ -394,9 +423,16 @@ const Navbar = () => {
               text-white
               px-6
               py-3
+              lg:px-3
+              lg:py-2
+              xl:px-6
+              xl:py-3
               rounded-full
               text-[18px]
+              lg:text-[12px]
+              xl:text-[18px]
               font-bold
+              whitespace-nowrap
               shadow-[0_6px_18px_rgba(212,160,23,0.25)]
               hover:shadow-[0_8px_22px_rgba(212,160,23,0.40)]
               transition-all
@@ -411,12 +447,11 @@ const Navbar = () => {
         </div>
 
 
-        {/* ================= MOBILE MENU BUTTON ================= */}
+        {/* ================= MOBILE / SMALL LAPTOP MENU BUTTON ================= */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="
-            hidden
-            max-md:block
+            lg:hidden
             text-[#0B1220]
             text-3xl
             font-bold
@@ -433,7 +468,7 @@ const Navbar = () => {
         </button>
 
 
-        {/* ================= MOBILE MENU ================= */}
+        {/* ================= MOBILE / SMALL LAPTOP MENU ================= */}
         {menuOpen && (
           <div
             className="
@@ -445,7 +480,7 @@ const Navbar = () => {
               border-t
               border-gray-200
               shadow-[0_10px_25px_rgba(0,0,0,0.12)]
-              md:hidden
+              lg:hidden
               max-h-[calc(100vh-5rem)]
               overflow-y-auto
             "
@@ -453,7 +488,7 @@ const Navbar = () => {
 
             <div className="flex flex-col py-3">
 
-              {/* Home */}
+              {/* ================= HOME ================= */}
               <Link
                 to="/"
                 onClick={() => setMenuOpen(false)}
@@ -473,7 +508,7 @@ const Navbar = () => {
               </Link>
 
 
-              {/* ================= MOBILE SEE HOW IT WORKS ================= */}
+              {/* ================= ACTIVE START APPROACH ================= */}
               <div>
 
                 <button
@@ -495,7 +530,7 @@ const Navbar = () => {
                     duration-300
                   "
                 >
-                  <span>See how it work</span>
+                  <span>ActiveStarts Kids Approach</span>
 
                   <span
                     className={`
@@ -614,7 +649,7 @@ const Navbar = () => {
               </div>
 
 
-              {/* Our Programs */}
+              {/* ================= OUR PROGRAMS ================= */}
               <Link
                 to="/sports"
                 onClick={() => setMenuOpen(false)}
@@ -634,7 +669,7 @@ const Navbar = () => {
               </Link>
 
 
-              {/* School Contact */}
+              {/* ================= SCHOOL CONTACT ================= */}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfFadbxKjNCOOpHe6T26kIfHXpN5EUigUktarQ9IJPPf0OO8A/viewform?usp=publish-editor"
                 onClick={() => setMenuOpen(false)}
@@ -654,7 +689,7 @@ const Navbar = () => {
               </a>
 
 
-              {/* Coach */}
+              {/* ================= COACH ================= */}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLScEsm6OgKTNNYjC8nMgwxKQm-OFhuloN3vvxm4_1UxMFFHhqg/viewform?usp=publish-editor"
                 onClick={() => setMenuOpen(false)}
@@ -674,7 +709,7 @@ const Navbar = () => {
               </a>
 
 
-              {/* Mobile Demo Button */}
+              {/* ================= MOBILE DEMO BUTTON ================= */}
               <div className="px-6 py-4">
 
                 <a
